@@ -5,11 +5,13 @@ import { site } from "@/lib/site";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact TorqMax — Palakkad, Kerala" },
-      { name: "description", content: "Get in touch with TorqMax Lubricants in Palakkad. Call +91 79973 84737 or email asfer@gmail.com." },
+      { title: "Contact TorqMax — Bengaluru, Karnataka" },
+      { name: "description", content: "Contact TorqMax Lubricants in Bengaluru. Call +91 85472 09583 or email tormax@gmail.com for sales & distribution." },
       { property: "og:title", content: "Contact TorqMax" },
-      { property: "og:description", content: "TorqMax — Palakkad, Kerala. Sales, distribution and support enquiries." },
+      { property: "og:description", content: "TorqMax — Bengaluru, Karnataka. Sales, distribution and support enquiries." },
+      { property: "og:url", content: "https://torcmax.lovable.app/contact" },
     ],
+    links: [{ rel: "canonical", href: "https://torcmax.lovable.app/contact" }],
   }),
   component: ContactPage,
 });
@@ -90,13 +92,13 @@ function ContactPage() {
               <MapPin className="h-5 w-5 text-accent shrink-0 mt-0.5" />
               <div>
                 <div className="font-display text-lg font-bold text-foreground">TorqMax Lubricants</div>
-                <div className="text-muted-foreground">{site.location}</div>
+                <div className="text-muted-foreground">{site.address}</div>
               </div>
             </div>
             <div className="rounded-lg overflow-hidden border border-border/60 aspect-square">
               <iframe
                 title="TorqMax location"
-                src="https://www.google.com/maps?q=Palakkad,Kerala&output=embed"
+                src="https://www.google.com/maps?q=5th+Main+Road+M+S+Ramaiah+Enclave+Nagasandra+Bengaluru+560073&output=embed"
                 className="h-full w-full grayscale contrast-125"
                 loading="lazy"
               />
