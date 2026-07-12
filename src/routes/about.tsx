@@ -28,7 +28,7 @@ function AboutPage() {
             Built in Bengaluru. <br /> Built for Indian engines.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground">
-            TorqMax was born from a simple belief — that riders across Karnataka and beyond deserve a premium engine oil brand that understands local roads, local heat, and the way Indian bikes are actually ridden.
+            TorqMax was born from a simple belief — Beyond deserve a premium engine oil brand that understands local roads, local heat, and the way Indian bikes are actually ridden.
           </p>
         </div>
       </section>
@@ -54,7 +54,7 @@ function AboutPage() {
             { icon: Factory, k: "Bengaluru", v: "Manufacturing base" },
             { icon: ShieldCheck, k: "API SL", v: "Certified formulations" },
             { icon: Sparkles, k: "100%", v: "Virgin base oil" },
-            { icon: Users, k: "Karnataka", v: "Growing distributor network" },
+            { icon: Users, k: "All Over India", v: "Growing distributor network" },
           ].map((s) => (
             <div key={s.k} className="text-center">
               <s.icon className="mx-auto h-8 w-8 text-accent" />

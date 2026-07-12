@@ -109,6 +109,10 @@ function Index() {
                 to="/products"
                 className="rounded-lg border border-border/60 bg-background/50 p-4 text-center hover:border-accent/60 transition"
               >
+                <div className="relative mx-auto flex h-44 items-end justify-center">
+                    <div className="absolute bottom-2 h-2 w-24 rounded-[50%] bg-black/50 blur-md" />
+                    <img src={p.image} alt={p.name} className="relative max-h-44 w-auto drop-shadow-xl transition-transform group-hover:-translate-y-1" />
+                </div>
                 <div className="text-[10px] uppercase tracking-[0.25em] text-accent">{p.variant}</div>
                 <div className="mt-2 font-display text-2xl font-bold text-gradient-steel">{p.grade}</div>
                 <div className="mt-1 text-xs text-muted-foreground">₹{p.price} · {p.size}</div>
@@ -130,7 +134,7 @@ function Index() {
           </p>
           <div className="mt-10 space-y-5">
             {[
-              { icon: Factory, t: "Made in Kerala", d: "Manufactured with strict quality control at our Palakkad facility." },
+              { icon: Factory, t: "Made in India", d: "Manufactured with strict quality control at our Banglore facility." },
               { icon: Award, t: "Certified Grade", d: "API SL & JASO MA2 compliant — meets modern OEM requirements." },
               { icon: Wrench, t: "Workshop Tested", d: "Field-validated by service technicians across South India." },
             ].map((x) => (

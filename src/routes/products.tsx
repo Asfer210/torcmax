@@ -74,7 +74,7 @@ function ProductsPage() {
       <section className="container-x pb-24">
         <div className="rounded-2xl border border-border/60 bg-[color:var(--surface)]/40 p-10 text-center">
           <h3 className="font-display text-3xl font-bold">Bulk orders & distributor enquiries</h3>
-          <p className="mt-3 text-muted-foreground">Reach out to our Palakkad office for pricing and partnership opportunities.</p>
+          <p className="mt-3 text-muted-foreground">Reach out to our office for pricing and partnership opportunities.</p>
         </div>
       </section>
     </div>
