@@ -5,11 +5,13 @@ import patternBg from "@/assets/pattern-bg.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About TorqMax — Premium Engine Oil from Palakkad" },
-      { name: "description", content: "TorqMax is a Palakkad-based lubricants brand crafting premium engine oils for India's two-wheeler and passenger vehicle market." },
+      { title: "About TorqMax — Premium Engine Oil from Bengaluru" },
+      { name: "description", content: "TorqMax is a Bengaluru-based lubricants brand crafting premium engine oils for India's two-wheeler and passenger vehicle market." },
       { property: "og:title", content: "About TorqMax" },
-      { property: "og:description", content: "Premium engine oils, engineered in Palakkad, Kerala." },
+      { property: "og:description", content: "Premium engine oils, engineered in Bengaluru, Karnataka." },
+      { property: "og:url", content: "https://torcmax.lovable.app/about" },
     ],
+    links: [{ rel: "canonical", href: "https://torcmax.lovable.app/about" }],
   }),
   component: AboutPage,
 });
@@ -23,10 +25,10 @@ function AboutPage() {
         <div className="container-x relative py-24 md:py-32 max-w-3xl">
           <div className="text-xs uppercase tracking-[0.3em] text-accent">Our Story</div>
           <h1 className="mt-4 font-display text-5xl md:text-6xl font-bold leading-tight">
-            Built in Palakkad. <br /> Built for Indian engines.
+            Built in Bengaluru. <br /> Built for Indian engines.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground">
-            TorqMax was born from a simple belief — that riders across Kerala and beyond deserve a premium engine oil brand that understands local roads, local heat, and the way Indian bikes are actually ridden.
+            TorqMax was born from a simple belief — that riders across Karnataka and beyond deserve a premium engine oil brand that understands local roads, local heat, and the way Indian bikes are actually ridden.
           </p>
         </div>
       </section>
@@ -49,10 +51,10 @@ function AboutPage() {
       <section className="border-y border-border/60 bg-[color:var(--surface)]/30">
         <div className="container-x py-20 grid md:grid-cols-4 gap-8">
           {[
-            { icon: Factory, k: "Palakkad", v: "Manufacturing base" },
+            { icon: Factory, k: "Bengaluru", v: "Manufacturing base" },
             { icon: ShieldCheck, k: "API SL", v: "Certified formulations" },
             { icon: Sparkles, k: "100%", v: "Virgin base oil" },
-            { icon: Users, k: "Kerala", v: "Growing distributor network" },
+            { icon: Users, k: "Karnataka", v: "Growing distributor network" },
           ].map((s) => (
             <div key={s.k} className="text-center">
               <s.icon className="mx-auto h-8 w-8 text-accent" />
