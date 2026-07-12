@@ -1,9 +1,9 @@
-import logoAsset from "@/assets/torqmax-logo.jpeg.asset.json";
-import redBottle from "@/assets/torqmax-red-cutout.png.asset.json";
-import blueBottle from "@/assets/torqmax-blue-cutout.png.asset.json";
-import esterBottle from "@/assets/torqmax-ester-20w50.png.asset.json";
-import supremeBottle from "@/assets/torqmax-supreme-20w40.png.asset.json";
-import scootBottle from "@/assets/torqmax-scoot-10w30.png.asset.json";
+import logoAsset from "@/assets/torqmax-logo.png";
+import redBottle from "@/assets/premium.png";
+import blueBottle from "@/assets/premium.png";
+import esterBottle from "@/assets/premium.png";
+import supremeBottle from "@/assets/premium.png";
+import scootBottle from "@/assets/premium.png";
 
 export const site = {
   name: "TorqMax",
@@ -13,7 +13,7 @@ export const site = {
   email: "tormax@gmail.com",
   address: "5th Main Road, M S Ramaiah Enclave, Tumkur Road, NH-4, Nagasandra, Bengaluru, Karnataka 560073",
   location: "Bengaluru, Karnataka, India",
-  logo: logoAsset.url,
+  logo: logoAsset,
 };
 
 export type Product = {
@@ -41,7 +41,7 @@ export const products: Product[] = [
     size: "1 L",
     engine: "4T Petrol Engines",
     color: "red",
-    image: redBottle.url,
+    image: redBottle,
     tagline: "Top-tier protection for modern engines",
     price: 415,
     features: [
@@ -60,7 +60,7 @@ export const products: Product[] = [
     size: "1 L",
     engine: "4T Petrol Engines",
     color: "blue",
-    image: blueBottle.url,
+    image: blueBottle,
     tagline: "Balanced performance for everyday riding",
     price: 399,
     features: [
@@ -79,7 +79,7 @@ export const products: Product[] = [
     size: "1 L",
     engine: "4T Petrol Engines",
     color: "orange",
-    image: supremeBottle.url,
+    image: supremeBottle,
     tagline: "Dependable protection at everyday value",
     price: 385,
     features: [
@@ -98,7 +98,7 @@ export const products: Product[] = [
     size: "800 ml",
     engine: "Automatic Scooters",
     color: "blue",
-    image: scootBottle.url,
+    image: scootBottle,
     tagline: "Semi-synthetic scooter oil",
     price: 349,
     features: [
@@ -117,7 +117,7 @@ export const products: Product[] = [
     size: "1 L",
     engine: "4T High-Load Engines",
     color: "gold",
-    image: esterBottle.url,
+    image: esterBottle,
     tagline: "Premium ester-fortified performance",
     price: 469,
     features: [

@@ -21,7 +21,7 @@ function Index() {
         <div className="container-x relative py-28 md:py-40 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/40 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-muted-foreground">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Engineered in Palakkad
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Engineered in Banglore
             </div>
             <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-tight">
               Unleash the <span className="text-gradient-gold">Torque.</span>
