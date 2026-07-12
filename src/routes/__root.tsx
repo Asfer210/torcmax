@@ -82,17 +82,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "TorqMax — Premium Engine Oil | Power • Performance • Protection" },
       { name: "description", content: "TorqMax premium engine oils engineered for Indian motorcycles and cars. 4T 20W-40 API SL / JASO MA2. Made in Palakkad, Kerala." },
       { name: "author", content: "TorqMax Lubricants" },
-      { property: "og:title", content: "TorqMax — Premium Engine Oil" },
-      { property: "og:description", content: "Power. Performance. Protection. Premium engine oils from Palakkad, Kerala." },
+      { property: "og:title", content: "TorqMax — Premium Engine Oil | Power • Performance • Protection" },
+      { property: "og:description", content: "TorqMax premium engine oils engineered for Indian motorcycles and cars. 4T 20W-40 API SL / JASO MA2. Made in Palakkad, Kerala." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "TorqMax — Premium Engine Oil | Power • Performance • Protection" },
+      { name: "twitter:description", content: "TorqMax premium engine oils engineered for Indian motorcycles and cars. 4T 20W-40 API SL / JASO MA2. Made in Palakkad, Kerala." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d59af36c-296f-4689-9f27-540651d8bf51/id-preview-f9523d41--3c7b93eb-5ed1-4eb6-8fba-79d11a2b780e.lovable.app-1783834899909.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d59af36c-296f-4689-9f27-540651d8bf51/id-preview-f9523d41--3c7b93eb-5ed1-4eb6-8fba-79d11a2b780e.lovable.app-1783834899909.png" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
