@@ -5,11 +5,13 @@ import { products } from "@/lib/site";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — TorqMax Premium Engine Oil" },
-      { name: "description", content: "Explore the TorqMax range of 4T premium engine oils, 20W-40 API SL / JASO MA2, engineered for Indian two-wheelers." },
-      { property: "og:title", content: "TorqMax Products" },
-      { property: "og:description", content: "The TorqMax range: 20W-40 4T engine oils built for power, performance and protection." },
+      { title: "Products & Prices — TorqMax Engine Oils" },
+      { name: "description", content: "TorqMax engine oil range: 20W-40 (API SN ₹415, SM ₹399, SL ₹385), 10W-30 SN and 20W-50 SN. Made in Bengaluru." },
+      { property: "og:title", content: "TorqMax Products & Prices" },
+      { property: "og:description", content: "Full TorqMax range with MRP — 20W-40 SN/SM/SL, 10W-30 SN and 20W-50 SN engine oils." },
+      { property: "og:url", content: "https://torcmax.lovable.app/products" },
     ],
+    links: [{ rel: "canonical", href: "https://torcmax.lovable.app/products" }],
   }),
   component: ProductsPage,
 });
@@ -22,7 +24,7 @@ function ProductsPage() {
           <div className="text-xs uppercase tracking-[0.3em] text-accent">Our Range</div>
           <h1 className="mt-4 font-display text-5xl md:text-6xl font-bold leading-tight">The TorqMax Range</h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Two premium 20W-40 formulations, engineered for four-stroke petrol engines. Both meet API SL and JASO MA2 — pick the finish that suits your ride.
+            Five focused grades — three 20W-40 tiers (SN, SM, SL), a 10W-30 SN for scooters and a 20W-50 SN for high-load engines. Real specs, honest pricing.
           </p>
         </div>
       </section>
@@ -45,6 +47,11 @@ function ProductsPage() {
                 {p.spec}
               </div>
               <p className="mt-6 text-muted-foreground max-w-md">{p.tagline}</p>
+
+              <div className="mt-6 flex items-baseline gap-3">
+                <span className="font-display text-4xl font-bold text-accent">₹{p.price}</span>
+                <span className="text-xs uppercase tracking-widest text-muted-foreground">MRP · {p.size}</span>
+              </div>
 
               <ul className="mt-8 space-y-3">
                 {p.features.map((f) => (

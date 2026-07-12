@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { ArrowRight, ShieldCheck, Gauge, Droplets, Wrench, Award, Factory, ChevronDown } from "lucide-react";
+import { ArrowRight, ShieldCheck, Gauge, Droplets, Wrench, Award, Factory } from "lucide-react";
 import heroImg from "@/assets/hero-engine.jpg";
 import { products, site } from "@/lib/site";
 
@@ -9,9 +8,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [showAll, setShowAll] = useState(false);
-  const featured = products.slice(0, 2);
-  const rest = products.slice(2);
   return (
     <div>
       {/* HERO */}
@@ -52,7 +48,7 @@ function Index() {
 
             <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
               {[
-                { k: "API", v: "SL" },
+                { k: "API", v: "SN" },
                 { k: "JASO", v: "MA2" },
                 { k: "GRADE", v: "20W-40" },
               ].map((s) => (
@@ -94,76 +90,31 @@ function Index() {
         </div>
       </section>
 
-      {/* PRODUCTS PREVIEW */}
+      {/* RANGE SUMMARY */}
       <section className="relative py-24 border-y border-border/60 bg-[color:var(--surface)]/30">
         <div className="container-x">
           <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
             <div>
               <div className="text-xs uppercase tracking-[0.3em] text-accent">The Range</div>
-              <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">Built for Every Ride</h2>
+              <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">Five grades. One promise.</h2>
             </div>
             <Link to="/products" className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-muted-foreground hover:text-accent">
               View all <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {featured.map((p) => (
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {products.map((p) => (
               <Link
                 key={p.slug}
                 to="/products"
-                className="group relative overflow-hidden rounded-xl border border-border/60 bg-background/60 p-8 flex gap-6 items-center hover:border-accent/50 transition"
+                className="rounded-lg border border-border/60 bg-background/50 p-4 text-center hover:border-accent/60 transition"
               >
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition ${p.color === "red" ? "bg-gradient-to-br from-[#c9302c]/10 to-transparent" : "bg-gradient-to-br from-primary/15 to-transparent"}`} />
-                <img src={p.image} alt={p.name} className="relative h-56 w-auto drop-shadow-2xl" />
-                <div className="relative flex-1">
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-accent">{p.variant}</div>
-                  <h3 className="mt-2 font-display text-2xl font-bold">{p.name}</h3>
-                  <div className="mt-1 font-display text-3xl font-bold text-gradient-steel">{p.grade}</div>
-                  <div className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">{p.spec}</div>
-                  <p className="mt-4 text-sm text-muted-foreground">{p.tagline}</p>
-                </div>
+                <div className="text-[10px] uppercase tracking-[0.25em] text-accent">{p.variant}</div>
+                <div className="mt-2 font-display text-2xl font-bold text-gradient-steel">{p.grade}</div>
+                <div className="mt-1 text-xs text-muted-foreground">₹{p.price} · {p.size}</div>
               </Link>
             ))}
           </div>
-
-          <div className="mt-10 flex flex-col items-center">
-            <button
-              type="button"
-              onClick={() => setShowAll((v) => !v)}
-              aria-expanded={showAll}
-              className="group inline-flex flex-col items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground hover:text-accent transition"
-            >
-              <span>{showAll ? "Hide full range" : "View full product range"}</span>
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-border/70 group-hover:border-accent/60 transition">
-                <ChevronDown className={`h-5 w-5 transition-transform ${showAll ? "rotate-180" : ""}`} />
-              </span>
-            </button>
-          </div>
-
-          {showAll && (
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 animate-fade-in">
-              {rest.map((p) => (
-                <Link
-                  key={p.slug}
-                  to="/products"
-                  className="group relative flex flex-col rounded-xl border border-border/60 bg-background/50 p-5 hover:border-accent/60 transition"
-                >
-                  <div className="relative mx-auto flex h-44 items-end justify-center">
-                    <div className="absolute bottom-2 h-2 w-24 rounded-[50%] bg-black/50 blur-md" />
-                    <img src={p.image} alt={p.name} className="relative max-h-44 w-auto drop-shadow-xl transition-transform group-hover:-translate-y-1" />
-                  </div>
-                  <div className="mt-4 text-[10px] uppercase tracking-[0.25em] text-accent">{p.variant}</div>
-                  <div className="mt-1 font-display text-base font-bold leading-tight">{p.name}</div>
-                  <div className="mt-1 font-display text-lg font-bold text-gradient-steel">{p.grade}</div>
-                  <div className="mt-2 flex items-center justify-between text-[10px] uppercase tracking-widest text-muted-foreground">
-                    <span>{p.spec}</span>
-                    <span>{p.size}</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
