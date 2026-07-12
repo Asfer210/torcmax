@@ -60,13 +60,17 @@ function Index() {
             </div>
           </div>
 
-          <div className="relative flex justify-center">
-            <div className="absolute -inset-8 bg-[image:var(--gradient-steel)] blur-3xl opacity-20 rounded-full" />
-            <img
-              src={products[0].image}
-              alt={products[0].name}
-              className="relative max-h-[560px] w-auto drop-shadow-[0_40px_60px_rgba(0,0,0,0.6)]"
-            />
+          <div className="relative flex justify-center items-center min-h-[560px]" style={{ perspective: "1200px" }}>
+            <div className="absolute inset-0 m-auto h-[420px] w-[420px] rounded-full bg-[image:var(--gradient-steel)] blur-3xl animate-halo-pulse" />
+            <div className="absolute inset-0 m-auto h-[360px] w-[360px] rounded-full bg-accent/20 blur-2xl animate-halo-pulse" style={{ animationDelay: "1.5s" }} />
+            <div className="relative animate-bottle-float">
+              <img
+                src={products[0].image}
+                alt={products[0].name}
+                className="relative max-h-[560px] w-auto drop-shadow-[0_50px_60px_rgba(0,0,0,0.75)] animate-bottle-spin"
+                style={{ transformOrigin: "center center" }}
+              />
+            </div>
           </div>
         </div>
       </section>
