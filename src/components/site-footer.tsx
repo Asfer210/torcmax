@@ -15,7 +15,7 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="mt-4 text-sm text-muted-foreground max-w-md">
-            Engineered in Palakkad, Kerala. TorqMax delivers premium engine oils that keep Indian engines running longer, cooler and more efficient.
+            Engineered in Bengaluru, Karnataka. TorqMax delivers premium engine oils that keep Indian engines running longer, cooler and more efficient.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export function SiteFooter() {
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-accent" /><a href={`tel:${site.phoneRaw}`}>{site.phone}</a></li>
             <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 text-accent" /><a href={`mailto:${site.email}`}>{site.email}</a></li>
-            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-accent" />{site.location}</li>
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-accent" /><span>{site.address}</span></li>
           </ul>
         </div>
       </div>
