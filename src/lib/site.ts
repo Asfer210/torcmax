@@ -1,6 +1,6 @@
 import logoAsset from "@/assets/torqmax-logo.jpeg.asset.json";
-import redBottle from "@/assets/torqmax-red.jpeg.asset.json";
-import blueBottle from "@/assets/torqmax-blue.jpeg.asset.json";
+import redBottle from "@/assets/torqmax-red-cutout.png.asset.json";
+import blueBottle from "@/assets/torqmax-blue-cutout.png.asset.json";
 
 export const site = {
   name: "TorqMax",
