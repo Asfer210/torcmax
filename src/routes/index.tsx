@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Gauge, Droplets, Wrench, Award, Factory } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, ShieldCheck, Gauge, Droplets, Wrench, Award, Factory, ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-engine.jpg";
 import { products, site } from "@/lib/site";
 
@@ -8,6 +9,9 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [showAll, setShowAll] = useState(false);
+  const featured = products.slice(0, 2);
+  const rest = products.slice(2);
   return (
     <div>
       {/* HERO */}
@@ -60,17 +64,14 @@ function Index() {
             </div>
           </div>
 
-          <div className="relative flex justify-center items-center min-h-[560px]" style={{ perspective: "1200px" }}>
-            <div className="absolute inset-0 m-auto h-[420px] w-[420px] rounded-full bg-[image:var(--gradient-steel)] blur-3xl animate-halo-pulse" />
-            <div className="absolute inset-0 m-auto h-[360px] w-[360px] rounded-full bg-accent/20 blur-2xl animate-halo-pulse" style={{ animationDelay: "1.5s" }} />
-            <div className="relative animate-bottle-float">
-              <img
-                src={products[0].image}
-                alt={products[0].name}
-                className="relative max-h-[560px] w-auto drop-shadow-[0_50px_60px_rgba(0,0,0,0.75)] animate-bottle-spin"
-                style={{ transformOrigin: "center center" }}
-              />
-            </div>
+          <div className="relative flex justify-center items-center min-h-[560px]">
+            <div className="absolute inset-0 m-auto h-[420px] w-[420px] rounded-full bg-[image:var(--gradient-steel)] blur-3xl opacity-25 animate-halo-pulse" />
+            <div className="absolute bottom-6 h-6 w-64 rounded-[50%] bg-black/60 blur-2xl" />
+            <img
+              src={products[0].image}
+              alt={products[0].name}
+              className="relative max-h-[560px] w-auto drop-shadow-[0_50px_60px_rgba(0,0,0,0.75)] animate-bottle-lift"
+            />
           </div>
         </div>
       </section>
@@ -107,7 +108,7 @@ function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {products.map((p) => (
+            {featured.map((p) => (
               <Link
                 key={p.slug}
                 to="/products"
@@ -125,6 +126,44 @@ function Index() {
               </Link>
             ))}
           </div>
+
+          <div className="mt-10 flex flex-col items-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((v) => !v)}
+              aria-expanded={showAll}
+              className="group inline-flex flex-col items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground hover:text-accent transition"
+            >
+              <span>{showAll ? "Hide full range" : "View full product range"}</span>
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-border/70 group-hover:border-accent/60 transition">
+                <ChevronDown className={`h-5 w-5 transition-transform ${showAll ? "rotate-180" : ""}`} />
+              </span>
+            </button>
+          </div>
+
+          {showAll && (
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 animate-fade-in">
+              {rest.map((p) => (
+                <Link
+                  key={p.slug}
+                  to="/products"
+                  className="group relative flex flex-col rounded-xl border border-border/60 bg-background/50 p-5 hover:border-accent/60 transition"
+                >
+                  <div className="relative mx-auto flex h-44 items-end justify-center">
+                    <div className="absolute bottom-2 h-2 w-24 rounded-[50%] bg-black/50 blur-md" />
+                    <img src={p.image} alt={p.name} className="relative max-h-44 w-auto drop-shadow-xl transition-transform group-hover:-translate-y-1" />
+                  </div>
+                  <div className="mt-4 text-[10px] uppercase tracking-[0.25em] text-accent">{p.variant}</div>
+                  <div className="mt-1 font-display text-base font-bold leading-tight">{p.name}</div>
+                  <div className="mt-1 font-display text-lg font-bold text-gradient-steel">{p.grade}</div>
+                  <div className="mt-2 flex items-center justify-between text-[10px] uppercase tracking-widest text-muted-foreground">
+                    <span>{p.spec}</span>
+                    <span>{p.size}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
